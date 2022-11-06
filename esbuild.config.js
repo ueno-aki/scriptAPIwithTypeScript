@@ -40,7 +40,7 @@ fs.emptyDir("./" + outFile).then(async () => {
 });
 
 function deployMCFolder() {
-    console.log("success build");
+    console.log(`success build [${new Date().getTime()}]`);
     fs.copy("./build/" + BPFolderName, mcdir + BPFolderName, (err) => {
         if (err) {
             console.error(err);
