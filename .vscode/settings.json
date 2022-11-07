@@ -9,5 +9,5 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.formatOnSave": true,
-    "editor.fontSize": 14
+    "workbench.tree.indent": 20
 }

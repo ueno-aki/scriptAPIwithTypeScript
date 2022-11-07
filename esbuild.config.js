@@ -1,5 +1,6 @@
-const BPFolderName = "_test";
+const BPFolderName = "myFirstScript"; //Change to your Addons Name
 
+const [node, file, arg1] = process.argv;
 const esbuild = require("esbuild");
 const os = require("os");
 const fs = require("fs-extra");
@@ -7,11 +8,11 @@ const fs = require("fs-extra");
 const mcdir =
     os.homedir() +
     "/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/";
-const outFile = "build/" + BPFolderName + "/scripts/";
-const [node, file, watchEnable] = process.argv;
+const outFolder = "build/" + BPFolderName + "/scripts/";
+/** @type {esbuild.BuildOptions} */
 const options = {
     bundle: true,
-    outfile: outFile + "main.js",
+    outfile: outFolder + "main.js",
     target: "es6",
     format: "esm",
     minifyIdentifiers: true,
@@ -21,7 +22,7 @@ const options = {
     tsconfig: "tsconfig.json",
     external: ["@minecraft/server", "@minecraft/server-ui"],
 };
-if (watchEnable === "watch") {
+if (arg1 === "watch") {
     options.watch = {
         onRebuild(err, res) {
             if (err) {
@@ -32,20 +33,25 @@ if (watchEnable === "watch") {
         },
     };
 }
-fs.emptyDir("./" + outFile).then(async () => {
-    fs.copySync("./behavior_packs/" + BPFolderName, "./build/" + BPFolderName);
-    esbuild.build(options).then(() => {
-        deployMCFolder();
-    });
+fs.emptyDir("./build/").then(() => {
+    fs.copySync("./behavior_packs/template", "./build/" + BPFolderName);
+    esbuild
+        .build(options)
+        .then(() => {
+            console.log(`success build [${new Date().getTime()}]`);
+            deployMCFolder();
+        })
+        .catch((e) => {
+            console.error(e);
+        });
 });
 
 function deployMCFolder() {
-    console.log("success build");
     fs.copy("./build/" + BPFolderName, mcdir + BPFolderName, (err) => {
         if (err) {
             console.error(err);
         } else {
-            console.log(`deploying "${BPFolderName}" to "${mcdir}${BPFolderName}"`);
+            console.log(`Deploying "${BPFolderName}" to "${mcdir}${BPFolderName}" [${new Date().getTime()}]`);
         }
     });
 }
