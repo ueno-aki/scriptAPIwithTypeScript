@@ -15,7 +15,7 @@ world.events.blockBreak.subscribe(({ player }) => {
             world.say("ok" + `${new Date().getTime()}`);
         })
         .then(() => {
-            world.say("a");
+            world.say("i");
         });
     Schedule.delay(() => {
         y.cancel();

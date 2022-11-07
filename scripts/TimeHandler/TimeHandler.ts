@@ -3,9 +3,7 @@ enum ScheduleType {
     repeat,
     delay,
 }
-/**
- * ### cancel()だとthenメソッドで追加したfunctionが作動しない させたいならfinish()
- * ```ts
+/**```ts
 world.events.blockBreak.subscribe(({ player }) => {
     const y = Schedule.repeat(tell, 20, -1, "a", player)
     .then(() => {
@@ -21,10 +19,7 @@ world.events.blockBreak.subscribe(({ player }) => {
 function tell(message: string, target: Player) {
     target.tell(message + `${new Date().getTime()}`);
 }
-
- * ```
- * tsの静的型付け言語としての強みをできるだけ出させれたと思う
- */
+```*/
 export class Schedule<T extends any[], U extends ScheduleType, V extends ScheduleOption<U>> {
     static repeat<T extends any[]>(
         task: (...args: T) => void,
