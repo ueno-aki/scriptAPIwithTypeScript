@@ -8,6 +8,5 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.formatOnSave": true,
-    "workbench.tree.indent": 20
+    "editor.formatOnSave": true
 }

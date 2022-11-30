@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "build": "node esbuild.config.js",
-        "watch": "node esbuild.config.js watch"
+        "build": "node esbuild.js",
+        "watch": "node esbuild.js watch"
     },
     "license": "ISC",
     "devDependencies": {
-        "@minecraft/server": "^1.0.0-beta.11940b24",
+        "@minecraft/server": "^1.1.0-beta.preview.1.19.50.25",
         "@minecraft/server-ui": "^1.0.0-beta.11940b24",
         "esbuild": "^0.15.13",
         "fs-extra": "^10.1.0",
