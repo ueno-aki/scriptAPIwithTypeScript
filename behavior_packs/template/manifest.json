@@ -3,7 +3,7 @@
     "header": {
         "name": "esbuild",
         "description": "",
-        "uuid": "05254c05-c810-4fb0-aef5-b6c74def117a",
+        "uuid": "7456e91e-35cd-42ce-8914-6e771b186219",
         "version": [0, 0, 1],
         "min_engine_version": [1, 17, 30]
     },
@@ -12,7 +12,7 @@
             "description": "GameTest module",
             "language": "javascript",
             "type": "script",
-            "uuid": "355005a6-3cc0-4c95-a493-8bcdd4f50c77",
+            "uuid": "bb137f1a-0717-4075-aefc-855b7d786c0d",
             "version": [1, 0, 0],
             "entry": "scripts/main.js"
         }

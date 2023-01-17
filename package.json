@@ -9,10 +9,9 @@
     },
     "license": "ISC",
     "devDependencies": {
-        "@minecraft/server": "^1.1.0-beta.release.1.19.50",
-        "@minecraft/server-ui": "^1.0.0-beta.release.1.19.50",
+        "@minecraft/server": "^1.1.0-beta.1.19.60-preview.26",
+        "@minecraft/server-ui": "^1.0.0-beta.1.19.60-preview.26",
         "esbuild": "^0.15.13",
-        "fs-extra": "^10.1.0",
-        "os": "^0.1.2"
+        "fs-extra": "^10.1.0"
     }
 }
