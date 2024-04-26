@@ -2,11 +2,12 @@ const [_node, _file, arg1] = process.argv;
 const esbuild = require("esbuild");
 const os = require("os");
 const fs = require("fs-extra");
+const pattern = /[\\\/:\*\?\"<>\|]/;
 
 const manifest = JSON.parse(fs.readFileSync("./behavior_packs/template/manifest.json").toString("utf8"));
 const project_name = manifest.header.name;
 if (project_name === undefined) throw new Error("Failed to find your addon name.");
-
+if (pattern.test(project_name)) throw new Error("Failed to deploy.Change your addon name.");
 const mcdir =
     os.homedir() +
     "/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/";

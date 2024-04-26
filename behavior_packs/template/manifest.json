@@ -1,7 +1,7 @@
 {
     "format_version": 2,
     "header": {
-        // "name": "esbuild",
+        "name": "esbuild",
         "description": "",
         "uuid": "7456e91e-35cd-42ce-8914-6e771b186219",
         "version": [0, 0, 1],
