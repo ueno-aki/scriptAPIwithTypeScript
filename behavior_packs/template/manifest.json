@@ -1,11 +1,11 @@
 {
     "format_version": 2,
     "header": {
-        "name": "esbuild",
+        // "name": "esbuild",
         "description": "",
         "uuid": "7456e91e-35cd-42ce-8914-6e771b186219",
         "version": [0, 0, 1],
-        "min_engine_version": [1, 17, 30]
+        "min_engine_version": [1, 20, 80]
     },
     "modules": [
         {
@@ -20,11 +20,11 @@
     "dependencies": [
         {
             "module_name": "@minecraft/server",
-            "version": "1.1.0-beta"
+            "version": "1.11.0-beta"
         },
         {
             "module_name": "@minecraft/server-ui",
-            "version": "1.0.0-beta"
+            "version": "1.1.0"
         }
     ]
 }

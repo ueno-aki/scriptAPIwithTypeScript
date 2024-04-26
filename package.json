@@ -5,12 +5,15 @@
     "scripts": {
         "build": "node esbuild.js",
         "watch": "node esbuild.js watch",
+        "uninstall": "npm uninstall @minecraft/server @minecraft/server-ui @minecraft/vanilla-data @minecraft/common",
+        "install": "npm i -D @minecraft/server@1.11.0-beta.1.20.80-stable @minecraft/server-ui@1.1.0 @minecraft/vanilla-data@1.20.80",
         "test": "npx tsc --noEmit"
     },
     "license": "ISC",
     "devDependencies": {
-        "@minecraft/server": "^1.1.0-beta.1.19.60-preview.26",
-        "@minecraft/server-ui": "^1.0.0-beta.1.19.60-preview.26",
+        "@minecraft/server": "^1.11.0-beta.1.20.80-stable",
+        "@minecraft/server-ui": "^1.1.0",
+        "@minecraft/vanilla-data": "^1.20.80",
         "esbuild": "^0.15.13",
         "fs-extra": "^10.1.0"
     }
